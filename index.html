@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirPure Pro - Smart Dehumidifier with LED Night Light | Free US Shipping</title>
+    <meta name="description" content="Eliminate mold, dampness & moisture with the AirPure Pro 1000ml Dehumidifier. Colorful LED night light, ultra-quiet, energy efficient. Free shipping to USA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --accent: #F59E0B;
+            --success: #10B981;
+            --danger: #EF4444;
+            --dark: #0F172A;
+            --gray: #64748B;
+            --light: #F8FAFC;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .top-bar span { color: var(--accent); font-weight: 700; }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 12px 20px;
+            border-bottom: 1px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .logo-sub { font-size: 10px; color: var(--gray); font-weight: 400; letter-spacing: 2px; text-transform: uppercase; }
+        .header-badge {
+            background: var(--success);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+            padding: 30px 20px 20px;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--danger);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        .hero h1 em {
+            font-style: normal;
+            color: var(--primary);
+        }
+        .hero-sub {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Image Slider */
+        .slider-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+        .slider img {
+            min-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 2;
+        }
+        .slider-btn.prev { left: 10px; }
+        .slider-btn.next { right: 10px; }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+        }
+        .slider-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #CBD5E1;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .slider-dots .dot.active {
+            background: var(--primary);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Rating */
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .stars { color: #FBBF24; font-size: 18px; }
+        .rating-text { font-size: 14px; color: var(--gray); }
+        .rating-text strong { color: var(--dark); }
+
+        /* Price */
+        .price-section {
+            background: white;
+            padding: 24px 20px;
+            text-align: center;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .price-current {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--danger);
+        }
+        .price-original {
+            font-size: 22px;
+            color: #94A3B8;
+            text-decoration: line-through;
+        }
+        .price-save {
+            background: #FEF2F2;
+            color: var(--danger);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .price-note {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* Timer */
+        .timer-section {
+            background: #FFF7ED;
+            border: 2px solid #FDBA74;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 20px;
+            text-align: center;
+        }
+        .timer-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #C2410C;
+            margin-bottom: 8px;
+        }
+        .timer-digits {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .timer-box {
+            background: var(--dark);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 22px;
+            font-weight: 800;
+            min-width: 50px;
+        }
+        .timer-box small { display: block; font-size: 9px; font-weight: 400; opacity: 0.7; }
+        .timer-colon { font-size: 22px; font-weight: 800; color: var(--dark); align-self: center; }
+
+        /* Features Grid */
+        .features {
+            padding: 32px 20px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .feature-card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+        }
+        .feature-icon { font-size: 32px; margin-bottom: 8px; }
+        .feature-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .feature-desc { font-size: 12px; color: var(--gray); }
+
+        /* Benefits */
+        .benefits {
+            padding: 32px 20px;
+            background: linear-gradient(135deg, #0F172A, #1E293B);
+            color: white;
+        }
+        .benefits .section-title { color: white; }
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .benefit-item:last-child { border-bottom: none; }
+        .benefit-check {
+            background: var(--success);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .benefit-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+        .benefit-text p { font-size: 13px; color: #94A3B8; }
+
+        /* Specs */
+        .specs {
+            padding: 32px 20px;
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .spec-table tr { border-bottom: 1px solid #E2E8F0; }
+        .spec-table td {
+            padding: 12px 8px;
+            font-size: 14px;
+        }
+        .spec-table td:first-child {
+            font-weight: 600;
+            color: var(--gray);
+            width: 40%;
+        }
+
+        /* Reviews */
+        .reviews {
+            padding: 32px 20px;
+            background: var(--light);
+        }
+        .review-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .review-name { font-weight: 600; font-size: 14px; }
+        .review-badge {
+            font-size: 11px;
+            color: var(--success);
+            font-weight: 500;
+        }
+        .review-stars { color: #FBBF24; font-size: 14px; margin-bottom: 8px; }
+        .review-text { font-size: 13px; color: #475569; line-height: 1.6; }
+
+        /* Guarantee */
+        .guarantee {
+            padding: 32px 20px;
+            text-align: center;
+        }
+        .guarantee-icon { font-size: 48px; margin-bottom: 12px; }
+        .guarantee h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .guarantee p { font-size: 14px; color: var(--gray); max-width: 400px; margin: 0 auto; }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 12px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sticky-price {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--danger);
+        }
+        .sticky-price small {
+            display: block;
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 400;
+            text-decoration: line-through;
+        }
+        .cta-btn {
+            flex: 1;
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            transition: all 0.3s;
+            font-family: inherit;
+            animation: ctaPulse 3s infinite;
+        }
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+            50% { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0); }
+        }
+        .cta-btn:hover { transform: translateY(-1px); }
+
+        .big-cta {
+            display: block;
+            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            color: white;
+            border: none;
+            padding: 20px 32px;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin: 24px 20px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        .big-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3); }
+        .cta-sub { text-align: center; font-size: 12px; color: var(--gray); margin-top: -16px; padding-bottom: 20px; }
+
+        /* Trust badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            text-align: center;
+            font-size: 11px;
+            color: var(--gray);
+        }
+        .trust-item .icon { font-size: 24px; display: block; margin-bottom: 4px; }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: #94A3B8;
+            text-align: center;
+            padding: 24px 20px 100px;
+            font-size: 12px;
+        }
+
+        /* FAQ */
+        .faq { padding: 32px 20px; }
+        .faq-item { border-bottom: 1px solid #E2E8F0; }
+        .faq-q {
+            padding: 16px 0;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-q::after { content: '+'; font-size: 20px; color: var(--gray); }
+        .faq-q.open::after { content: '−'; }
+        .faq-a {
+            display: none;
+            padding: 0 0 16px;
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        .faq-a.open { display: block; }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 38px; }
+            .features-grid { grid-template-columns: repeat(4, 1fr); }
+            .slider-container { max-width: 450px; }
+        }
+
+        /* Extra padding for sticky CTA */
+        .footer { padding-bottom: 100px; }
+    </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <span>SPRING SALE</span> &mdash; 53% OFF + FREE US Shipping &mdash; Limited Time Only!
+</div>
+
+<!-- Header -->
+<div class="header">
+    <div>
+        <div class="logo">AirPure<span style="color:var(--accent)">Pro</span></div>
+        <div class="logo-sub">Smart Home Solutions</div>
+    </div>
+    <div class="header-badge">🚚 Free Shipping</div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-badge">🔥 SELLING FAST — 10,000+ Sold</div>
+    <h1>Say Goodbye to <em>Mold & Moisture</em> Forever</h1>
+    <p class="hero-sub">The smart dehumidifier with built-in LED night light that protects your home 24/7</p>
+
+    <!-- Image Slider -->
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <img src="https://ae01.alicdn.com/kf/Sf42a10c1233548de8f119dad52e0a1fd7.jpg" alt="AirPure Pro Dehumidifier - Front View" loading="eager">
+            <img src="https://ae01.alicdn.com/kf/S430d945a86da4858a1775306b1a550d0e.jpg" alt="AirPure Pro Dehumidifier - Side View" loading="lazy">
+            <img src="https://ae01.alicdn.com/kf/Sb8e3b379692e4ddda03e20563df0b37fe.jpg" alt="AirPure Pro - LED Night Light Feature" loading="lazy">
+            <img src="https://ae01.alicdn.com/kf/Sefadf94598be482f8bb1e85497f6fd90z.jpg" alt="AirPure Pro - Water Tank" loading="lazy">
+            <img src="https://ae01.alicdn.com/kf/S5a48f697e1514003bbee37464f56b2165.jpg" alt="AirPure Pro - In Use" loading="lazy">
+            <img src="https://ae01.alicdn.com/kf/S519f04ccc9d14df8a64df4aceb53d576N.jpg" alt="AirPure Pro - Specifications" loading="lazy">
+            <img src="https://ae01.alicdn.com/kf/S974490dc2d784765a9d401b15fcfbeb3y.jpg" alt="AirPure Pro - Features" loading="lazy">
+            <img src="https://ae01.alicdn.com/kf/S4ac373427edf40e7961bd0c7885b56f66.jpg" alt="AirPure Pro - Details" loading="lazy">
+            <img src="https://ae01.alicdn.com/kf/Sc90b2952aaf74b4ebe57533d032843f1y.jpg" alt="AirPure Pro - Room Setup" loading="lazy">
+        </div>
+        <button class="slider-btn prev" onclick="slide(-1)">&#8249;</button>
+        <button class="slider-btn next" onclick="slide(1)">&#8250;</button>
+        <div class="slider-dots" id="dots"></div>
+    </div>
+
+    <div class="rating-bar">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text"><strong>4.9/5</strong> (688 reviews)</span>
+    </div>
+</div>
+
+<!-- Price -->
+<div class="price-section">
+    <div class="price-row">
+        <span class="price-current">$34.99</span>
+        <span class="price-original">$74.99</span>
+        <span class="price-save">SAVE 53%</span>
+    </div>
+    <p class="price-note">🚚 FREE Shipping to USA &bull; Ships within 24hrs</p>
+</div>
+
+<!-- Timer -->
+<div class="timer-section">
+    <div class="timer-label">⚡ SPRING SALE ENDS IN:</div>
+    <div class="timer-digits">
+        <div class="timer-box" id="hours">07<small>HRS</small></div>
+        <span class="timer-colon">:</span>
+        <div class="timer-box" id="mins">42<small>MIN</small></div>
+        <span class="timer-colon">:</span>
+        <div class="timer-box" id="secs">18<small>SEC</small></div>
+    </div>
+</div>
+
+<!-- CTA -->
+<a href="https://s.click.aliexpress.com/e/_c3LdAXLz" target="_blank" rel="noopener" class="big-cta">
+    🛒 ORDER NOW — 53% OFF
+</a>
+<p class="cta-sub">✅ 30-Day Money Back Guarantee &bull; 🔒 Secure Checkout</p>
+
+<!-- Features -->
+<div class="features">
+    <h2 class="section-title">Why 10,000+ Homes Trust AirPure Pro</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">💧</div>
+            <div class="feature-title">1000ml Tank</div>
+            <div class="feature-desc">Large capacity, less emptying</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌈</div>
+            <div class="feature-title">7-Color LED</div>
+            <div class="feature-desc">Beautiful night light built-in</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔇</div>
+            <div class="feature-title">Ultra Quiet</div>
+            <div class="feature-desc">Whisper-silent operation</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div class="feature-title">Only 36W</div>
+            <div class="feature-desc">Save on electric bills</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏠</div>
+            <div class="feature-title">215 sq ft</div>
+            <div class="feature-desc">Covers any room</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <div class="feature-title">Auto Shut-Off</div>
+            <div class="feature-desc">Stops when tank is full</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚐</div>
+            <div class="feature-title">Portable</div>
+            <div class="feature-desc">Home, office, RV, closet</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔌</div>
+            <div class="feature-title">US Plug</div>
+            <div class="feature-desc">110V ready, plug & play</div>
+        </div>
+    </div>
+</div>
+
+<!-- Benefits -->
+<div class="benefits">
+    <h2 class="section-title">What AirPure Pro Does For Your Home</h2>
+    <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <div class="benefit-text">
+            <h4>Eliminates Mold & Mildew</h4>
+            <p>Removes excess moisture that causes dangerous mold growth in bathrooms, basements & closets</p>
+        </div>
+    </div>
+    <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <div class="benefit-text">
+            <h4>Protects Your Health</h4>
+            <p>Reduces allergens, dust mites & musty odors for cleaner, healthier air you can breathe easy</p>
+        </div>
+    </div>
+    <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <div class="benefit-text">
+            <h4>Saves Your Belongings</h4>
+            <p>Prevents moisture damage to clothes, electronics, furniture & documents</p>
+        </div>
+    </div>
+    <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <div class="benefit-text">
+            <h4>Beautiful Night Light</h4>
+            <p>7 relaxing LED colors create the perfect ambient atmosphere for any room</p>
+        </div>
+    </div>
+    <div class="benefit-item">
+        <div class="benefit-check">✓</div>
+        <div class="benefit-text">
+            <h4>Set It & Forget It</h4>
+            <p>Auto shut-off when tank is full with indicator light — no worries about overflow</p>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<a href="https://s.click.aliexpress.com/e/_c3LdAXLz" target="_blank" rel="noopener" class="big-cta">
+    🛒 GET YOURS NOW — 53% OFF
+</a>
+<p class="cta-sub">🔥 Only 37 left at this price!</p>
+
+<!-- Specs -->
+<div class="specs">
+    <h2 class="section-title">Specifications</h2>
+    <table class="spec-table">
+        <tr><td>Tank Capacity</td><td>1000ml (1 Liter)</td></tr>
+        <tr><td>Coverage Area</td><td>Up to 215 sq ft</td></tr>
+        <tr><td>Power</td><td>36W (energy efficient)</td></tr>
+        <tr><td>Voltage</td><td>110V US Standard</td></tr>
+        <tr><td>Technology</td><td>Thermoelectric Cooling</td></tr>
+        <tr><td>Night Light</td><td>7 Colors LED</td></tr>
+        <tr><td>Dimensions</td><td>5.3" x 5.9" x 9.8"</td></tr>
+        <tr><td>Auto Shut-Off</td><td>Yes — Full Tank Indicator</td></tr>
+        <tr><td>Noise Level</td><td>Ultra Quiet (&lt;35dB)</td></tr>
+        <tr><td>Certification</td><td>CE, RoHS, UL</td></tr>
+    </table>
+</div>
+
+<!-- Reviews -->
+<div class="reviews">
+    <h2 class="section-title">⭐ What Customers Are Saying</h2>
+
+    <div class="review-card">
+        <div class="review-header">
+            <div class="review-avatar">S</div>
+            <div>
+                <div class="review-name">Sarah M.</div>
+                <div class="review-badge">✅ Verified Buyer</div>
+            </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">This little thing is AMAZING! I put it in my bathroom and within 40 minutes there was already water in the collection tank. The LED light is a beautiful bonus — my kids love the color-changing feature. Best $35 I ever spent!</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-header">
+            <div class="review-avatar">M</div>
+            <div>
+                <div class="review-name">Mike T.</div>
+                <div class="review-badge">✅ Verified Buyer</div>
+            </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Living in Florida, humidity is a real problem. This dehumidifier handles our closet perfectly — no more musty smell! It's super quiet too, can't even hear it running. Already ordered one for the RV.</p>
+    </div>
+
+    <div class="review-card">
+        <div class="review-header">
+            <div class="review-avatar">J</div>
+            <div>
+                <div class="review-name">Jennifer L.</div>
+                <div class="review-badge">✅ Verified Buyer</div>
+            </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">The appearance is impeccable and it works great at keeping humidity around 60%. Love the auto shut-off feature — I don't have to worry about it overflowing. The night light is so calming too!</p>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How often do I need to empty the tank?</div>
+        <div class="faq-a">Depending on humidity levels, typically every 2-4 days for normal rooms. The auto shut-off feature and indicator light will let you know when it's time to empty.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Does it work with US power outlets?</div>
+        <div class="faq-a">Yes! The US Plug version works with standard 110V American outlets. Simply plug in and it's ready to go — no adapters needed.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How loud is it?</div>
+        <div class="faq-a">The AirPure Pro operates at less than 35 decibels — quieter than a whisper. You can sleep peacefully with it running in your bedroom.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What rooms can I use it in?</div>
+        <div class="faq-a">It's perfect for bedrooms, bathrooms, closets, basements, kitchens, offices, and even RVs. It covers up to 215 square feet effectively.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is there a warranty?</div>
+        <div class="faq-a">Yes, all orders include a 30-day money-back guarantee. If you're not completely satisfied, we'll give you a full refund — no questions asked.</div>
+    </div>
+</div>
+
+<!-- Guarantee -->
+<div class="guarantee">
+    <div class="guarantee-icon">🛡️</div>
+    <h3>30-Day Money Back Guarantee</h3>
+    <p>We stand behind our product 100%. If you're not absolutely thrilled with your AirPure Pro, return it within 30 days for a full refund.</p>
+</div>
+
+<!-- Trust Badges -->
+<div class="trust-badges">
+    <div class="trust-item"><span class="icon">🔒</span>Secure Checkout</div>
+    <div class="trust-item"><span class="icon">🚚</span>Free US Shipping</div>
+    <div class="trust-item"><span class="icon">🛡️</span>30-Day Guarantee</div>
+    <div class="trust-item"><span class="icon">📦</span>10,000+ Sold</div>
+</div>
+
+<!-- Final CTA -->
+<a href="https://s.click.aliexpress.com/e/_c3LdAXLz" target="_blank" rel="noopener" class="big-cta">
+    🛒 ORDER NOW — SAVE 53% TODAY
+</a>
+<p class="cta-sub">⚡ Sale ends soon — Don't miss out!</p>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2026 AirPure Pro. All rights reserved.</p>
+    <p style="margin-top:8px;">This site is not affiliated with AliExpress. Individual results may vary.</p>
+</div>
+
+<!-- Sticky CTA -->
+<div class="sticky-cta">
+    <div class="sticky-price">
+        $34.99
+        <small>$74.99</small>
+    </div>
+    <a href="https://s.click.aliexpress.com/e/_c3LdAXLz" target="_blank" rel="noopener" class="cta-btn">
+        🛒 ORDER NOW — 53% OFF
+    </a>
+</div>
+
+<script>
+// Image Slider
+let currentSlide = 0;
+const totalSlides = 9;
+const slider = document.getElementById('slider');
+const dotsContainer = document.getElementById('dots');
+
+// Create dots
+for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+}
+
+function slide(dir) {
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    updateSlider();
+}
+
+function goToSlide(n) {
+    currentSlide = n;
+    updateSlider();
+}
+
+function updateSlider() {
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => {
+        d.className = 'dot' + (i === currentSlide ? ' active' : '');
+    });
+}
+
+// Auto-slide
+setInterval(() => slide(1), 4000);
+
+// Touch support
+let touchStartX = 0;
+slider.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+slider.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) slide(diff > 0 ? 1 : -1);
+});
+
+// Countdown Timer
+function startTimer() {
+    let total = 7 * 3600 + 42 * 60 + 18; // 7h 42m 18s
+    const saved = localStorage.getItem('timer_end');
+    if (saved && parseInt(saved) > Date.now()) {
+        total = Math.floor((parseInt(saved) - Date.now()) / 1000);
+    } else {
+        localStorage.setItem('timer_end', Date.now() + total * 1000);
+    }
+
+    setInterval(() => {
+        if (total <= 0) total = 8 * 3600; // Reset
+        total--;
+        const h = Math.floor(total / 3600);
+        const m = Math.floor((total % 3600) / 60);
+        const s = total % 60;
+        document.getElementById('hours').innerHTML = String(h).padStart(2, '0') + '<small>HRS</small>';
+        document.getElementById('mins').innerHTML = String(m).padStart(2, '0') + '<small>MIN</small>';
+        document.getElementById('secs').innerHTML = String(s).padStart(2, '0') + '<small>SEC</small>';
+    }, 1000);
+}
+startTimer();
+
+// FAQ Toggle
+function toggleFaq(el) {
+    el.classList.toggle('open');
+    el.nextElementSibling.classList.toggle('open');
+}
+
+// Track CTA clicks
+document.querySelectorAll('a[href*="aliexpress"]').forEach(a => {
+    a.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') gtag('event', 'click', { event_category: 'CTA', event_label: 'order_now' });
+    });
+});
+</script>
+
+</body>
+</html>
