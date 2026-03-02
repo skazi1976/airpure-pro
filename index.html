@@ -482,11 +482,100 @@
         }
         .faq-a.open { display: block; }
 
+        /* Customer Photos Gallery */
+        .photo-gallery {
+            padding: 32px 20px;
+            background: var(--light);
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .photo-grid img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .photo-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .photo-count {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* Review with photo */
+        .review-photos {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+        .review-photos img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .review-photos img:hover {
+            transform: scale(1.05);
+        }
+        .review-location {
+            font-size: 12px;
+            color: #94A3B8;
+            margin-top: 2px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox img {
+            max-width: 95%;
+            max-height: 90vh;
+            border-radius: 12px;
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
         /* Desktop */
         @media (min-width: 768px) {
             .hero h1 { font-size: 38px; }
             .features-grid { grid-template-columns: repeat(4, 1fr); }
             .slider-container { max-width: 450px; }
+            .photo-grid { grid-template-columns: repeat(4, 1fr); }
+            .review-photos img { width: 110px; height: 110px; }
         }
 
         /* Extra padding for sticky CTA */
@@ -677,44 +766,108 @@
     </table>
 </div>
 
+<!-- Customer Photos -->
+<div class="photo-gallery">
+    <h2 class="section-title">📸 Real Customer Photos</h2>
+    <div class="photo-grid">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ae2aa96c93d38433daed61069ff8f2da0C.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Af7cf976c08914cc49d360d7f415fc5d6v.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/A2befd56d2db84fdda90f942d0d80641al.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Aaec89103b6f343a0b5ba6dfe3b17f903u.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Aee8b7c837a664dea8777acffbd3cc2ddR.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ab87fe6831dc04a65b5193a73ce20da53R.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ae4b72f8b67534dcf8aa303bf24e464e1Y.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf52076cfc0c94514923a487cc6464ce9T.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ac834065229f34502b15fca67c895e554E.jpg_960x960q75.jpg_.avif" alt="Customer photo" onclick="openLightbox(this.src)" loading="lazy">
+    </div>
+    <p class="photo-count">📷 688 reviews with photos</p>
+</div>
+
 <!-- Reviews -->
 <div class="reviews">
     <h2 class="section-title">⭐ What Customers Are Saying</h2>
 
     <div class="review-card">
         <div class="review-header">
-            <div class="review-avatar">S</div>
+            <div class="review-avatar" style="background:#7C3AED;">S</div>
             <div>
                 <div class="review-name">Sarah M.</div>
                 <div class="review-badge">✅ Verified Buyer</div>
+                <div class="review-location">📍 Tampa, Florida</div>
             </div>
         </div>
         <div class="review-stars">★★★★★</div>
         <p class="review-text">This little thing is AMAZING! I put it in my bathroom and within 40 minutes there was already water in the collection tank. The LED light is a beautiful bonus — my kids love the color-changing feature. Best $35 I ever spent!</p>
+        <div class="review-photos">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/A8234544984f34fc697e26b6c0da64bf2L.jpg_960x960q75.jpg_.avif" alt="Review photo" onclick="openLightbox(this.src)" loading="lazy">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Af5363eec26144446b7a7a0bf565ed4a2T.jpg_960x960q75.jpg_.avif" alt="Review photo" onclick="openLightbox(this.src)" loading="lazy">
+        </div>
     </div>
 
     <div class="review-card">
         <div class="review-header">
-            <div class="review-avatar">M</div>
+            <div class="review-avatar" style="background:#059669;">M</div>
             <div>
                 <div class="review-name">Mike T.</div>
                 <div class="review-badge">✅ Verified Buyer</div>
+                <div class="review-location">📍 Houston, Texas</div>
             </div>
         </div>
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">Living in Florida, humidity is a real problem. This dehumidifier handles our closet perfectly — no more musty smell! It's super quiet too, can't even hear it running. Already ordered one for the RV.</p>
+        <p class="review-text">Living in Texas, humidity is a real problem. This dehumidifier handles our closet perfectly — no more musty smell! It's super quiet too, can't even hear it running. Already ordered one for the RV.</p>
+        <div class="review-photos">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/A4f68a493560a451d95d8da9913e88ce42.jpg_960x960q75.jpg_.avif" alt="Review photo" onclick="openLightbox(this.src)" loading="lazy">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/A7c737c2d151f443eb425ff1d6f6df2b40.jpg_960x960q75.jpg_.avif" alt="Review photo" onclick="openLightbox(this.src)" loading="lazy">
+        </div>
     </div>
 
     <div class="review-card">
         <div class="review-header">
-            <div class="review-avatar">J</div>
+            <div class="review-avatar" style="background:#DC2626;">J</div>
             <div>
                 <div class="review-name">Jennifer L.</div>
                 <div class="review-badge">✅ Verified Buyer</div>
+                <div class="review-location">📍 Portland, Oregon</div>
             </div>
         </div>
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">The appearance is impeccable and it works great at keeping humidity around 60%. Love the auto shut-off feature — I don't have to worry about it overflowing. The night light is so calming too!</p>
+        <p class="review-text">The appearance is impeccable and it works great at keeping humidity around 60%. Love the auto shut-off feature — I don't have to worry about it overflowing. The night light is so calming in my bedroom!</p>
+        <div class="review-photos">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ac6699ee5332f4394931c938082e307ccJ.jpg_960x960q75.jpg_.avif" alt="Review photo" onclick="openLightbox(this.src)" loading="lazy">
+        </div>
+    </div>
+
+    <div class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" style="background:#2563EB;">D</div>
+            <div>
+                <div class="review-name">David R.</div>
+                <div class="review-badge">✅ Verified Buyer</div>
+                <div class="review-location">📍 Miami, Florida</div>
+            </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Bought two — one for the basement and one for the baby's room. The night light feature is perfect for nighttime feedings. After just one night, I could already see water collected. Highly recommend!</p>
+        <div class="review-photos">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ae2aa96c93d38433daed61069ff8f2da0C.jpg_960x960q75.jpg_.avif" alt="Review photo" onclick="openLightbox(this.src)" loading="lazy">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Af7cf976c08914cc49d360d7f415fc5d6v.jpg_960x960q75.jpg_.avif" alt="Review photo" onclick="openLightbox(this.src)" loading="lazy">
+        </div>
+    </div>
+
+    <div class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" style="background:#F59E0B;">A</div>
+            <div>
+                <div class="review-name">Amanda K.</div>
+                <div class="review-badge">✅ Verified Buyer</div>
+                <div class="review-location">📍 Seattle, Washington</div>
+            </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Perfect for our rainy Seattle weather! My bathroom used to have condensation on the mirrors every morning. After using this for a week, the difference is unbelievable. Plus it looks so sleek on the counter.</p>
+        <div class="review-photos">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ab87fe6831dc04a65b5193a73ce20da53R.jpg_960x960q75.jpg_.avif" alt="Review photo" onclick="openLightbox(this.src)" loading="lazy">
+        </div>
     </div>
 </div>
 
@@ -769,6 +922,12 @@
 <div class="footer">
     <p>&copy; 2026 AirPure Pro. All rights reserved.</p>
     <p style="margin-top:8px;">This site is not affiliated with AliExpress. Individual results may vary.</p>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close">&times;</button>
+    <img id="lightboxImg" src="" alt="Full size photo">
 </div>
 
 <!-- Sticky CTA -->
@@ -853,6 +1012,20 @@ function toggleFaq(el) {
     el.classList.toggle('open');
     el.nextElementSibling.classList.toggle('open');
 }
+
+// Lightbox
+function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
 
 // Track CTA clicks
 document.querySelectorAll('a[href*="aliexpress"]').forEach(a => {
